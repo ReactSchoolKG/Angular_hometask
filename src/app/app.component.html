@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+  {{ title }}! 
+  </h1>
+</div>
+<ul ngClass="content-style">
+<app-school *ngFor="let item of schools"[data]="item"(onAdd)="addSchool($event)">
+</app-school><br/>
+<ul *ngFor="let school of schoolList">
+<li>Name:{{school.name}}, id:{{school.id}}, place:{{school.place}}</li>
+</ul>
