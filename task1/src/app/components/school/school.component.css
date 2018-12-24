@@ -1,0 +1,6 @@
+.school{
+    display: flex;
+    width:300px;
+    margin: auto;
+    justify-content: space-between;
+}
