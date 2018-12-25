@@ -1,0 +1,7 @@
+.info{
+    display: flex;
+    width:400px;
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+}
