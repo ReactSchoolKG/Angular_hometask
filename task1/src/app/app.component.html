@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <app-school *ngFor="let item of schools"
+              [data]="item"
+              (addNewSchool)="addSchool($event)">
+  </app-school>
+  <hr/>
+  <div *ngFor="let school of schoolList">
+    Name: <b>{{school.name}}</b>, place: <b>{{school.place}}</b>, id: <b>{{school.id}}</b>
+  </div>
+</div>
