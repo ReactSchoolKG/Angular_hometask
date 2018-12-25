@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<app-school *ngFor="let item of schools" [data]="item" (schoolAdded)="addNewSchool($event)" class="app-school">
+</app-school>
+
+<div *ngFor="let school of ListOfAddedSchools" class="app-school-added">
+  <div >
+    Name of school: {{school.name | uppercase}} 
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<!-- щоб сайт був безпечніший від атак  ->  rel="noopener"  -->

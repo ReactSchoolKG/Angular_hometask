@@ -1,0 +1,19 @@
+.app-student-added{
+    background-color: rgb(56, 56, 56);
+    color:#fff
+}
+
+.app-student-added div{
+    padding: 10px;
+}
+
+
+
+/* HW ---------- */
+.app-school-added{
+    background-color: rgb(58, 58, 58);
+    color:#fff;
+}
+.app-school-added div{
+    padding: 10px;
+}
