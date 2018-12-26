@@ -1,4 +1,4 @@
-<div style="text-align:center">
+<!--<div style="text-align:center">
   <app-school *ngFor="let item of schools"
               [data]="item"
               (schoolAdd)="addSchool($event)">
@@ -7,4 +7,27 @@
   <div *ngFor="let school of schoolList">
     Name: <b>{{school.name}}</b>, place: <b>{{school.place}}</b>, id: <b>{{school.id}}</b>
   </div>
+</div>-->
+<p [ngClass]="{underline:underline, 
+            red:red, 
+            big:big}">KG School</p>
+<div *ngIf="control;then controlTemplate else ngControl">
+  
 </div>
+<div>
+  <button (click)="control=!control">Show control</button>
+</div>
+<ng-template #controlTemplate>
+  <button (click)="underline=!underline">Underline</button>
+  <button (click)="red=!red">Red</button>
+  <button (click)="big=!big">Big</button>
+</ng-template>
+<ng-template #ngControl>
+  Nothing
+</ng-template>
+<!--trackBy example-->
+<button (click)="addOtherEpisode()">Add</button>
+
+<app-item-list *ngFor="let item of episodes; trackBy:trackById" [data]="item">
+
+</app-item-list>
