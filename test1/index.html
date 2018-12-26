@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const heroes = 
+        [
+            { name: 'Wolverine',      family: 'Marvel',    isEvil: false }, 
+            { name: 'Deadpool',       family: 'Marvel',    isEvil: false },
+            { name: 'Magneto',        family: 'Marvel',    isEvil: true  }, 
+            { name: 'Charles Xavier', family: 'Marvel',    isEvil: false },  
+            { name: 'Batman',         family: 'DC Comics', isEvil: false },  
+            { name: 'Harley Quinn',   family: 'DC Comics', isEvil: true  },  
+            { name: 'Legolas',        family: 'Tolkien',   isEvil: false },  
+            { name: 'Gandalf',        family: 'Tolkien',   isEvil: false }, 
+            { name: 'Saruman',        family: 'Tolkien',   isEvil: true  } 
+        ];
+        var filtered = heroes.filter((elem)=>{
+            return elem["isEvil"] == true
+        }); 
+        console.log(filtered); 
+
+        var familyKeys = ["Marvel", "DC Comics", "Tolkien"];
+
+        var filteredMarvel = heroes.filter((elem)=>{
+            return elem["family"] == familyKeys[0]
+        }); 
+
+        var filteredDC = heroes.filter((elem)=>{
+            return elem["family"] == familyKeys[1]
+        }); 
+
+        var filteredTolkien = heroes.filter((elem)=>{
+            return elem["family"] == familyKeys[2]
+        }); 
+
+        var obj = {
+            "Marvel": filteredMarvel,
+            "DC Comics": filteredDC,
+            "Tolkien": filteredTolkien
+        }
+        console.log(obj);
+    </script>
+</body>
+</html>
