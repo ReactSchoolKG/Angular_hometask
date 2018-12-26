@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const heroes = [{ name: 'Wolverine', family: 'Marvel', isEvil: false}, 
+		{ name: 'Deadpool', family: 'Marvel', isEvil: false }, 
+		{ name: 'Magneto', family: 'Marvel', isEvil: true }, 
+		{ name: 'Charles Xavier', family: 'Marvel', isEvil: false }, 
+		{ name: 'Batman', family: 'DC Comics', isEvil: false }, 
+		{ name: 'Harley Quinn', family: 'DC Comics', isEvil: true }, 
+		{ name: 'Logolas', family: 'Tolkien', isEvil: false }, 
+		{ name: 'Gandalf', family: 'Tolkien', isEvil: false }, 
+		{ name: 'Saruman', family: 'Tolkien', isEvil: true }];
+
+		const evilHeroes = heroes.filter((elem) => {
+			return elem.isEvil
+		});
+
+		const sortHeroes = {
+			'Marvel': [],
+			'DC Comics': [],
+			'Tolkien': []
+		};
+
+		heroes.map((elem) => {
+			switch (elem.family) {
+				case 'Marvel':
+					sortHeroes['Marvel'].push(elem.name);
+					break;
+				case 'DC Comics':
+					sortHeroes['DC Comics'].push(elem.name);
+					break;
+				case 'Tolkien':
+					sortHeroes['Tolkien'].push(elem.name);
+					break;
+				default: null;
+			}
+		});
+		
+		console.log(evilHeroes);
+		console.log(sortHeroes);
+	</script>
+</body>
+</html>
