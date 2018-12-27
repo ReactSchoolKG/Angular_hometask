@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <title>task</title>
+</head>
+<body>
+<script>
+    
+   const heroes=[
+{name:'Wolverine', family:'Marvel', isEvil:false},
+{name:'Deadpool', family:'Marvel', isEvil:false},
+{name:'Magneto', family:'Marvel', isEvil:true},
+{name:'Charles Xavier', family:'Marvel', isEvil:false},
+{name:'Batman', family:'DC Comics', isEvil:false},
+{name:'Harley Quinn', family:'DC Comics', isEvil:true},
+{name:'Legolas', family:'Tolkien', isEvil:false},
+{name:'Gandalf', family:'Tolkien', isEvil:false},
+{name:'Saruman', family:'Tolkien', isEvil:true},
+];
+    
+    
+    let result = heroes.filter( hero =>{
+  if(hero.isEvil)
+    { 
+    return hero;
+}
+});
+
+console.log(result);
+    
+    
+    const families = {
+        'Marvel':[],
+        'DC Comics':[],
+        'Tolkien':[]
+    };
+    
+       heroes.forEach((elem)=>{
+         if(elem.family==='Marvel'){
+              families['Marvel'].push(elem.name);
+         }
+           if(elem.family==='DC Comics'){
+              families['DC Comics'].push(elem.name);
+         }
+           if(elem.family==='Tolkien'){
+              families['Tolkien'].push(elem.name);
+         }
+             
+         });
+         
+     console.log(families)
+    
+
+        
+    
+    </script>
+</body>
+</html>
