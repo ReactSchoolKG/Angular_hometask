@@ -12,7 +12,7 @@
 
     function evilHeroes (arr) {
 
-        const evilHeroes = [];
+        const evilHeroes = arr.filter(item => item.isEvil === true);
 
         const objHero = {
             'Marvel':[],
@@ -20,19 +20,19 @@
             'Tolkien':[]
         };
 
-        arr.forEach(element => {
+        evilHeroes.forEach(element => {
 
-            if(element.family === 'Marvel' && element.isEvil === true) {
+            if(element.family === 'Marvel') {
             objHero['Marvel'] = element;
-            } else if (element.family === 'DC Comics' && element.isEvil === true) {
+            } else if (element.family === 'DC Comics') {
                 objHero['DC Comics'] = element;
-            } else if (element.family === 'Tolkien' && element.isEvil === true) {
+            } else if (element.family === 'Tolkien') {
                 objHero['Tolkien'] = element;
             };
         });
 
-        evilHeroes.push(objHero);
-        console.log(evilHeroes);
+       
+        console.log(objHero);
     };
 
     evilHeroes(heroes);
