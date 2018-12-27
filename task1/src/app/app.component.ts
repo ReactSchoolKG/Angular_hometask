@@ -5,16 +5,17 @@ import { School } from './models/school';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit{
-  /*public schools: School[]=[
+export class AppComponent /*implements AfterViewInit*/{
+  public schools: School[]=[
     {name:'Cambridge School', id:1, place:'Cambridge, UK'},
     {name:'Harvard University', id:2, place:'Massachusetts, USA'}
   ];
   public schoolList:object[]=[];
   addSchool(newSchool:object){
     this.schoolList.push(newSchool);
-  }*/
-  control=false;
+  }
+  //Examples from Lecture 2
+  /*control=false;
   underline=false;
   red=false;
   big=false;
@@ -44,5 +45,5 @@ export class AppComponent implements AfterViewInit{
   }
   ngAfterViewInit():void{
     console.log('after view init');
-  }
+  }*/
 }
