@@ -24,10 +24,7 @@ console.log(result);
 const results = ["3:1","3:2","3:3","3:4","3:2","3:3","3:4","3:1","3:2","3:4"];
 
 const points = (arr) => {
-    return results.reduce((accum, item, index) => {
-        if(index === 0){
-            accum = 0;   
-        }
+    return results.reduce((accum, item) => {
         let x = Number(item.split("")[0]);
         let y = Number(item.split("")[2]);
         if(x > y){
@@ -39,9 +36,9 @@ const points = (arr) => {
         else{
             return accum;
         }
-        return item;
-    }, results[0]);
+    }, 0);
 }
+
 
 const resultPoints = points(results);
 console.log(resultPoints);
