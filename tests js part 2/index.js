@@ -11,18 +11,30 @@ const heroes=[
     {name:'Hello', family:'Test', isEvil:true},
 ];
 
+// 1 way , reduce
 const objByFamilies = (arr) => 
- arr.reduce((accum, item) => {
-    accum[item.family] === undefined ? accum[item.family] = [item] : accum[item.family].push(item);
-    return accum; 
+    arr.reduce((accum, item) => {
+        const { family } = item;
+        accum[family] === undefined ? accum[family] = [item] : accum[family].push(item);
+        return accum; 
  }, {})
 
 const result = objByFamilies(heroes);
 console.log(result);
 
 
-const results = ["3:1","3:2","3:3","3:4","3:2","3:3","3:4","3:1","3:2","3:4"];
+//2 way, forEach
+heroesObj = {}
 
+heroes.forEach(hero => {
+    const { family, name } = hero;
+    heroesObj[family] === undefined ? heroesObj[family] = [name] : heroesObj[family].push(name);
+})
+console.log(heroesObj);
+
+
+//3 football task
+const results = ["3:1","3:2","3:3","3:4","3:2","3:3","3:4","3:1","3:2","3:4"];
 const points = (arr) => {
     return results.reduce((accum, item) => {
         let x = Number(item.split("")[0]);
@@ -39,9 +51,10 @@ const points = (arr) => {
     }, 0);
 }
 
-
 const resultPoints = points(results);
 console.log(resultPoints);
 
+
+//4 string task
 startString = "hgf hgfhf hgfh";
 console.log(startString.split(' ').join(''));
