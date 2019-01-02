@@ -45,10 +45,10 @@ const heroes = [{
     }
 ];
 
-// const result = heroes.reduce((acc, cur) => {
-//     acc[cur.family] = [...acc, cur.name];
-//     return acc;
-// }, {});
+// // const result = heroes.reduce((acc, cur) => {
+// //     acc[cur.family] = [...acc, cur.name];
+// //     return acc;
+// // }, {});
 
 const result1 = {};
 
@@ -60,18 +60,20 @@ result1.Marvel = arr1;
 result1.DCComics = arr2;
 result1.Tolkien = arr3;
 
-
-
-
 console.log(result1);
 
-// 1. Create new array of heroes, where property isEvil is true.
-// 2. Create object
-// {‘Marvel’:[],// all heroes from family Marvel
-// ‘DC Comics’:[],// all heroes from family DC Comics
-// ‘Tolkien’:[]// all heroes from family Tolkien
-// }
-// Output:
-// {‘Marvel’:['Wolverine','Deadpool',’Magneto','Charles Xavier'],
-// ‘DC Comics’:['Batman','Harley Quinn'],
-// ‘T
+const arr1 = ['3:1', '3:1', '3:1'];
+
+const result = arr1.map(item => item.split(':')).reduce((acc, cur) => {
+    if (cur[0] > cur[1]) return 3 + acc;
+    if (cur[0] === cur[1]) return 1 + acc;
+    if (cur[0] < cur[1]) return 0 + acc;
+}, 0);
+
+const str1 = 'Here is a test sentence';
+const str2 = str1.replace(/\s/g, "");
+console.log(str2);
+
+
+
+console.log(result);
