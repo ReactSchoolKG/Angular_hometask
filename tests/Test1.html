@@ -20,7 +20,20 @@
 			return elem.isEvil
 		});
 
-		const sortHeroes = {
+		console.log(evilHeroes);
+
+		let sortHeroes = heroes.reduce((result, elem)=>{
+			if(!result.hasOwnProperty(elem.family)){
+				result[elem.family] = [];		
+			}
+			result[elem.family].push(elem);	
+			return result;
+		},{});
+
+		console.log(sortHeroes);
+
+		//Second way to sort heroes
+		/*const sortHeroes = {
 			'Marvel': [],
 			'DC Comics': [],
 			'Tolkien': []
@@ -39,10 +52,8 @@
 					break;
 				default: null;
 			}
-		});
+		});*/
 		
-		console.log(evilHeroes);
-		console.log(sortHeroes);
 	</script>
 </body>
 </html>
