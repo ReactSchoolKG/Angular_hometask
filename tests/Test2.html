@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//Football Points 
+		const results = ["3:1", "2:2", "0:1", "1:2"];
+
+		const pointsCounter = (res) => {
+			return res.reduce((sum, elem)=>{
+				let x = elem[0], y = elem[2], point;
+				point = (x>y) ? 3 : (x<y) ? 0 : 1;
+				return sum + point;
+			}, 0);
+		};
+
+		console.log(pointsCounter(results));
+
+		//Remove String Spaces
+		const str = "Lorem ipsum dolor sit amet."
+
+		const removeStringSpaces = (str) => {
+			return str.replace(/\s/g,'');  
+		};
+
+		console.log(removeStringSpaces(str));
+	</script>
+</body>
+</html>
