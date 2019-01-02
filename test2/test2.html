@@ -8,18 +8,19 @@
 </head>
 <body>
   <script>
-    const points = ["3:1","2:2", "0:1","1:2"];
+    const points = ["3:1", "2:2", "0:1", "1:2"];
     var counter = 
         points.reduce(function(sum, elem){
             var x = elem[0];
             var y = elem[2];
-           if (x > y)
-           return 3 + sum;
-           if (x < y)
-           return 0 + sum;
-           if (x === y)
-           return 1 + sum;
-    }, 0);
+            if (x > y)
+                return 3 + sum;
+            if (x < y)
+                return 0 + sum;
+            if (x === y)
+                return 1 + sum;
+        }, 0);
+
     console.log(counter);
 
     const str = "Happy Happy Happy";
@@ -27,7 +28,7 @@
     var str2 = 
         ar.reduce(function(sum, elem){
             return sum + elem;
-    },'');
+        },'');
     console.log(str2);
     </script>
     </body>
