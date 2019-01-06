@@ -1,0 +1,12 @@
+<div style="display: flex; flex-direction: column; height: 6vh">
+  <div>
+    <input placeholder="find hero by name" #search/>
+  </div>
+  <div>
+    <h4>Last search time: {{time}}</h4>
+  </div>
+</div>
+<br/>
+<ul>
+  <app-hero-list-item *ngFor="let item of array" [hero]="item"></app-hero-list-item>
+</ul>
