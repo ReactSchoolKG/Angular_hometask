@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { fromEvent } from 'rxjs';
-import { ajax } from 'rxjs/ajax';
+import { Component, AfterViewInit, ViewChild, Input, ElementRef } from '@angular/core';
+import { fromEvent, Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
@@ -8,24 +8,48 @@ import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
+  @ViewChild('input') inputField: ElementRef;
+
   title = 'task3';
 
 
+  constructor() { }
 
-  searchBox = document.getElementById('search-box');
+  ngAfterViewInit() {
+    const input = document.getElementById('input');
+    console.log(input);
+    const typeahead = fromEvent(input as HTMLInputElement, 'input').pipe(
+      map((e: KeyboardEvent) => e.target['value']),
+      filter(text => text.length > 1),
+      debounceTime(10),
+      distinctUntilChanged(),
+      switchMap(() => of(1, 11, 111, 2, 22, 222, 3, 33, 333))
+    );
 
-  const typeahead = fromEvent(this.searchBox, 'input').pipe(
-    map((e: KeyboardEvent) => e.target.value),
-    filter(text => text.length > 2),
-    debounceTime(10),
-    distinctUntilChanged(),
-    switchMap(() => ajax('/api/endpoint'))
-  );
+    typeahead.subscribe(data => {
+      console.log(data);
+    });
 
-  typeahead.subscribe(data => {
-    // Handle the data from the API
-  });
+
+
+
+  }
+
+
+  // searchBox = document.getElementById('search-box');
+
+  // const typeahead = fromEvent(this.searchBox, 'input').pipe(
+  //   map((e: KeyboardEvent) => e.target.value),
+  //   filter(text => text.length > 2),
+  //   debounceTime(10),
+  //   distinctUntilChanged(),
+  //   switchMap(() => ajax('/api/endpoint'))
+  // );
+
+  // typeahead.subscribe(data => {
+  //   // Handle the data from the API
+  // });
 
 
 
