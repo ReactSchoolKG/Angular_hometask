@@ -45,38 +45,34 @@ const heroes = [{
     }
 ];
 
+// Heroes task - output specific object of given array of objects
+
 const result = heroes.reduce((acc, {
     name,
     family
 }) => {
-    // acc[family] = name;
-    (acc[family] && Array.isArray(acc[family])) ? [...acc[family], ...name.split()] : acc[family] = name.split();
+    if (!acc[family]) {
+        acc[family] = [];
+    }
+    acc[family].push(name);
     return acc;
 }, {});
 
 console.log(result);
 
-// const result1 = {};
+// Football task
 
-// const arr1 = heroes.filter(item => item.family === 'Marvel').map(item => item.name);
-// const arr2 = heroes.filter(item => item.family === 'DC Comics').map(item => item.name);
-// const arr3 = heroes.filter(item => item.family === 'Tolkien').map(item => item.name);
+const arr4 = ['3:1', '0:1', '3:1', '3:4', '0:0', '2:1'];
 
-// result1.Marvel = arr1;
-// result1.DCComics = arr2;
-// result1.Tolkien = arr3;
+const result2 = arr4.map(item => item.split(':')).reduce((acc, cur) => {
+    return (cur[0] > cur[1]) ? 3 + acc : (cur[0] === cur[1]) ? 1 + acc : 0 + acc;
+}, 0);
 
-// console.log(result1);
+console.log(result2);
 
-// const arr4 = ['3:1', '0:1', '3:1', '3:4', '0:0', '2:1'];
+//Remove white-spaces task
 
-// const result2 = arr4.map(item => item.split(':')).reduce((acc, cur) => {
-//     return (cur[0] > cur[1]) ? 3 + acc : (cur[0] === cur[1]) ? 1 + acc : 0 + acc;
-// }, 0);
+const str = 'Here is a test sentence';
+const str2 = str.replace(/\s/g, "");
 
-// console.log(result2);
-
-// const str1 = 'Here is a test sentence';
-// const str2 = str1.replace(/\s/g, "");
-
-// console.log(str2);
+console.log(str2);

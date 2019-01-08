@@ -9,8 +9,6 @@ import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild('input') inputField: ElementRef;
-
   title = 'task3';
 
 
@@ -24,7 +22,14 @@ export class AppComponent implements AfterViewInit {
       filter(text => text.length > 1),
       debounceTime(10),
       distinctUntilChanged(),
-      switchMap(() => of(1, 11, 111, 2, 22, 222, 3, 33, 333))
+      switchMap(() => of('Mercury',
+        'Venus',
+        'Earth',
+        'Mars',
+        'Jupiter',
+        'Saturn',
+        'Uranus',
+        'Neptune'))
     );
 
     typeahead.subscribe(data => {
@@ -35,23 +40,6 @@ export class AppComponent implements AfterViewInit {
 
 
   }
-
-
-  // searchBox = document.getElementById('search-box');
-
-  // const typeahead = fromEvent(this.searchBox, 'input').pipe(
-  //   map((e: KeyboardEvent) => e.target.value),
-  //   filter(text => text.length > 2),
-  //   debounceTime(10),
-  //   distinctUntilChanged(),
-  //   switchMap(() => ajax('/api/endpoint'))
-  // );
-
-  // typeahead.subscribe(data => {
-  //   // Handle the data from the API
-  // });
-
-
 
 
 
