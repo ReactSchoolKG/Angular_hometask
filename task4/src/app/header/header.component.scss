@@ -1,0 +1,29 @@
+header.masthead {
+
+  margin-bottom: 50px;
+  background: no-repeat center center;
+  background-color: #868e96;
+  background-attachment: scroll;
+  position: relative;
+  background-size: cover;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #212529;
+    opacity: .5;
+  }
+
+  .site-heading {
+    text-align: center;
+
+    @media only screen and (min-width: 768px) {
+      padding: 200px 0;
+    }
+  }
+
+
+}
