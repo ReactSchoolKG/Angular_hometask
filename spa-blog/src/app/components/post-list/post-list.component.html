@@ -1,3 +1,4 @@
-<p>
-  post-list works!
-</p>
+<app-post *ngFor="let item of posts" [post]="item"></app-post>
+<div class="clearfix">
+    <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+</div>
