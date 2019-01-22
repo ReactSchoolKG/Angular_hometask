@@ -32,6 +32,7 @@ export class AppComponent implements OnInit {
     this.search = {text: inputText, date: new Date().toLocaleTimeString()}
   }
 
+  // create style objects
   outputStyle = {
   'color':'blue',
   'font-size':'smaller'
