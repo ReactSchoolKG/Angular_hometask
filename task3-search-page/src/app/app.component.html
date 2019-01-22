@@ -1,0 +1,7 @@
+<div [ngStyle]="mainStyle">
+  <h2>Search Page</h2>
+  <input type="text" #inputRef placeholder="your request">
+  <div *ngIf="search" class="output">
+    <p>You was searching: "{{ search.text  }}" <span [ngStyle]="outputStyle"> {{ search.date }}</span> </p>
+  </div>
+</div>
