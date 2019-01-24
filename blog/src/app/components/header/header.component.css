@@ -1,0 +1,28 @@
+.heading{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;  
+    height: 500px;
+}
+.title-style{
+    font-weight: bold;
+    font-size: 70px;
+}
+
+h1{
+font-weight: 800;
+font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+text-align: center;
+color: #fff;
+font-size: 80px;
+margin-top: 130px; 
+}
+
+.subheading{
+    text-align: center;
+    color: #fff; 
+    text-align: center;
+    font-size: 24px;
+    font-family: Lora,'Times New Roman',serif;
+}

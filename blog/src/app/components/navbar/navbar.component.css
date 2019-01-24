@@ -1,0 +1,21 @@
+.navbar{
+  width: 100%;
+  }
+
+a {
+  color: white;
+  font-weight: bold;
+  }
+
+li {
+  list-style-type: none;
+  }
+
+.ml-auto{
+  float: right;
+  }
+
+.nav-link{
+  padding-right: 20px;
+  margin-top: 10px;
+  }
