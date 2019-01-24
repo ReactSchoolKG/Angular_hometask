@@ -18,7 +18,7 @@
 
 <router-outlet></router-outlet>
  -->
-
+<!-- 
  <p [ngClass]="{underline:underline, red:red, big:big}">Lecture 2 in KG school</p>
 
 <div>
@@ -31,6 +31,9 @@
 	<button (click)="big=!big">Big</button>
 </div>
 
-<ng-template #noControl>Nothing</ng-template>
+<ng-template #noControl>Nothing</ng-template> -->
 
 <!-- <app-item-list *ngFor="let item of episodes;trackBy=trackById" [data]="item">d</app-item-list> -->
+
+{{screenResizer$|async}}
+{{timer$|async}}

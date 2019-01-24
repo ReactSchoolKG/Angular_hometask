@@ -1,0 +1,15 @@
+.main {
+	background-image: url("http://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg");
+    height: 100%;
+    width: 100%;
+    display: block;
+    font-size: 20px;
+    color: #212529;
+}
+
+.blog{ 
+	display: flex;
+	justify-content: center;
+	z-index: -2;
+	color: black;
+}
