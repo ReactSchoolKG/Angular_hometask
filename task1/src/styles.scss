@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+.list-header {
+    width: 120px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.list {
+    display: flex;
+}
+
+.list-item {
+    width: 120px;
+}
+
+.list-item-id {
+    width: 30px;
+}
+
+.list-item, .list-item-id {
+    border: 1px solid black;
+}

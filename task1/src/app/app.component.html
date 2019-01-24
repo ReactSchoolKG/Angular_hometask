@@ -1,14 +1,13 @@
 <h1>Task 1</h1>
-<!-- <p>{{schools}}</p> -->
 
 <div *ngFor="let item of schoolList">
   {{ item }}
 </div>
 
-<div>
-  <div>Id</div>
-  <div>School</div>
-  <div>Country</div>
+<div class="list">
+  <div class="list-item-id list-header">Id</div>
+  <div class="list-item list-header">School</div>
+  <div class="list-item list-header">Country</div>
 </div>
 <app-school *ngFor="let school of schools" [data]="school" (addSchool)="addNewSchool($event)"></app-school>
 
