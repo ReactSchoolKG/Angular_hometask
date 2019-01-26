@@ -1,0 +1,7 @@
+ <div class="search-panel">
+  <h2>Search some info</h2>
+  <input type="text" #input placeholder="Some text">
+  <div *ngIf="search">
+    <p>"{{ search.text  }}" {{ search.date }}</p>
+  </div>
+</div>
