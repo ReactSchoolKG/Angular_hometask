@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" class="form-control" formControlName="firstName">
+          <span *ngIf="!signupForm.get('firstName').valid&&signupForm.get('firstName').touched" class="help-block">
+            First letter should be uppercase!
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" class="form-control" formControlName="lastName">
+          <span *ngIf="!signupForm.get('lastName').valid&&signupForm.get('lastName').touched" class="help-block">
+            First letter should be uppercase!
+          </span>
+        </div>
+
+
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" class="form-control" formControlName="age">
+          <span *ngIf="!signupForm.get('age').valid&&signupForm.get('age').touched" class="help-block">
+            Age range is from 0 to 120!
+          </span>
+        </div>
+
+        <div formArrayName="children">
+          <h4>Your Children</h4>
+          <hr>
+          <button class="btn btn-primary form-control" type="button" (click)="addChildren()">Add One More Children</button>
+          <div class="form-group" *ngFor="let hobbyControl of signupForm.get('children').controls; let i = index">
+            <div [formGroupName]="i">
+              <div class="form-group">
+                <label for="age">Name:</label>
+                <input class="form-control" formControlName="name" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label for="age">Surname:</label>
+                <input class="form-control" formControlName="surname" placeholder="Surname">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
