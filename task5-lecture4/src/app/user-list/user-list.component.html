@@ -1,0 +1,19 @@
+<h4>Registered Users</h4>
+<ul class="list-group" *ngFor="let user of users">
+  <li class="list-group-item">
+    <p>Name: {{user.firstName}}</p>
+    <p>Surname: {{user.lastName}}</p>
+    <p>Age: {{user.age}}</p>
+    <div>
+      <h5>Children:</h5>
+      <ul *ngFor="let child of user.children; let i = index">
+        <li>
+          <p>Name: {{user.children[i].name}} Surname: {{user.children[i].surname}}</p>
+        </li>
+      </ul>
+
+    </div>
+
+  </li>
+
+</ul>
