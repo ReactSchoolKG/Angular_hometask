@@ -47,10 +47,22 @@
         </div>
         <button class="btn btn-success" [disabled]="!signupForm.valid&&signupForm.touched" type="submit">Submit</button>
       </form>
+      <hr>
+      <div>
+        <h4 class="pt-3">Square Pipe</h4>
+        <div class="form-group">
+          <label for="radius">Radius:</label>
+          <input class="form-control" placeholder="Please put radius here" (keyup)="onKey($event)">
+          <p *ngIf="radius" class=" pt-3">Circle
+            square: {{radius | square}}</p>
+        </div>
+      </div>
     </div>
     <div class="col-sm-6">
       <app-user-list></app-user-list>
+
     </div>
+
   </div>
 
 </div>

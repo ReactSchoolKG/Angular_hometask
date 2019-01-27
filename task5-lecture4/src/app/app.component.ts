@@ -11,6 +11,7 @@ import { UserService } from './user.service';
 export class AppComponent implements OnInit {
   public signupForm: FormGroup;
   public children: FormArray;
+  public radius: number;
   constructor(@Inject(FormBuilder) private fb: FormBuilder, private userService: UserService) { }
 
   ngOnInit() {
@@ -40,6 +41,10 @@ export class AppComponent implements OnInit {
   addChild(): void {
     this.children = this.signupForm.get('children') as FormArray;
     this.children.push(this.createChild());
+  }
+
+  onKey(event: any) {
+    this.radius = +event.target.value;
   }
 
 }
