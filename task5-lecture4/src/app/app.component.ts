@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   public signupForm: FormGroup;
   public children: FormArray;
   public radius: number;
+  public hex: any;
   constructor(@Inject(FormBuilder) private fb: FormBuilder, private userService: UserService) { }
 
   ngOnInit() {
@@ -45,6 +46,10 @@ export class AppComponent implements OnInit {
 
   onKey(event: any) {
     this.radius = +event.target.value;
+  }
+
+  onKeyHex(hex: any) {
+    this.hex = event.target.value;
   }
 
 }

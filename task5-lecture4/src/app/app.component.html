@@ -57,6 +57,14 @@
             square: {{radius | square}}</p>
         </div>
       </div>
+      <div>
+        <h4 class="pt-3">HexToRgb Pipe</h4>
+        <div class="form-group">
+          <label for="radius">Hex:</label>
+          <input class="form-control" placeholder="Please put hex value here" (keyup)="onKeyHex($event)">
+          <p *ngIf="hex" class=" pt-3">Rgb: {{hex | hexToRgb}}</p>
+        </div>
+      </div>
     </div>
     <div class="col-sm-6">
       <app-user-list></app-user-list>

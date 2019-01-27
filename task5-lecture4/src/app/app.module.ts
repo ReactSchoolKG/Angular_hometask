@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserListComponent } from './user-list/user-list.component';
 import { SquarePipe } from './square.pipe';
+import { HexToRgbPipe } from './hex-to-rgb.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
-    SquarePipe
+    SquarePipe,
+    HexToRgbPipe
   ],
   imports: [
     BrowserModule,
