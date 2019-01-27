@@ -1,0 +1,116 @@
+<form [formGroup]="userForm">
+  <fieldset>
+    <legend>Profile form </legend>
+    <fieldset>
+      <legend>Personal data </legend>
+      <label>First Name</label>
+      <br/>
+      <input type="text" placeholder="first name" formControlName="firstName"/>
+      <div *ngIf="!userForm.get('firstName').valid && (userForm.get('firstName').touched || userForm.get('firstName').dirty)" style="color: red; font-size: 12px">
+        <div *ngIf="userForm.get('firstName').errors.required">
+          First Name is required.
+        </div>
+        <div *ngIf="userForm.get('firstName').errors.firstUpperCaseLetter">
+          {{userForm.get('firstName').errors.message}}
+        </div>
+        <div *ngIf="userForm.get('firstName').errors.minlength">
+          First Name must be longer than 2 symbols
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <label>Last Name</label>
+      <br/>
+      <input type="text" placeholder="last name" formControlName="lastName"/>
+      <div *ngIf="!userForm.get('lastName').valid && (userForm.get('lastName').touched || userForm.get('lastName').dirty)" style="color: red; font-size: 12px">
+        <div *ngIf="userForm.get('lastName').errors.required">
+          Last Name is required.
+        </div>
+        <div *ngIf="userForm.get('lastName').errors.firstUpperCaseLetter">
+          {{userForm.get('lastName').errors.message}}
+        </div>
+        <div *ngIf="userForm.get('lastName').errors.minlength">
+          Last Name must be longer than 2 symbols
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <label>Age</label>
+      <br/>
+      <input type="text" placeholder="age" formControlName="age"/>
+      <div *ngIf="!userForm.get('age').valid && (userForm.get('age').touched || userForm.get('age').dirty)" style="color: red; font-size: 12px">
+        <div *ngIf="userForm.get('age').errors.required">
+          Age is required.
+        </div>
+        <div *ngIf="userForm.get('age').errors.min || userForm.get('age').errors.max">
+          Age must be bigger than 0 and lower than 120
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <fieldset>
+        <legend>Children</legend>
+        <div formArrayName="children">
+          <div *ngFor="let item of userForm.get('children').controls; let i = index">
+            <div [formGroupName]="i">
+              <br/>
+              <div>
+                <label>First Name</label>
+                <br/>
+                <input placeholder="firstName" formControlName="firstName">
+                <div *ngIf="!item.get('firstName').valid && (item.get('firstName').touched || item.get('firstName').dirty)" style="color: red; font-size: 12px">
+                  <div *ngIf="item.get('firstName').errors.required">
+                    First Name is required.
+                  </div>
+                  <div *ngIf="item.get('firstName').errors.firstUpperCaseLetter">
+                    {{item.get('firstName').errors.message}}
+                  </div>
+                  <div *ngIf="item.get('firstName').errors.minlength">
+                    First Name must be longer than 2 symbols
+                  </div>
+                </div>
+              </div>
+              <br/>
+              <br/>
+              <div>
+                <label>Last Name</label>
+                <br/>
+                <input placeholder="lastName" formControlName="lastName">
+                <div *ngIf="!item.get('lastName').valid && (item.get('lastName').touched || item.get('lastName').dirty)" style="color: red; font-size: 12px">
+                  <div *ngIf="item.get('lastName').errors.required">
+                    Last Name is required.
+                  </div>
+                  <div *ngIf="item.get('lastName').errors.firstUpperCaseLetter">
+                    {{item.get('lastName').errors.message}}
+                  </div>
+                  <div *ngIf="item.get('lastName').errors.minlength">
+                    Last Name must be longer than 2 symbols
+                  </div>
+                </div>
+              </div>
+              <br/>
+              <br/>
+              <div>
+                <label>Age</label>
+                <br/>
+                <input placeholder="age" formControlName="age">
+                <div *ngIf="!item.get('age').valid && (item.get('age').touched || item.get('age').dirty)" style="color: red; font-size: 12px">
+                  <div *ngIf="item.get('age').errors.required">
+                    Age is required.
+                  </div>
+                  <div *ngIf="item.get('age').errors.min || item.get('age').errors.max">
+                    Age must be bigger than 0 and lower than 120
+                  </div>
+                </div>
+              </div>
+              <br/>
+            </div>
+          </div>
+        </div>
+        <button (click)="addChildren()">Add children</button>
+      </fieldset>
+      <br>
+      <button (click)="addUser()" [disabled]="!userForm.valid">Add user</button>
+    </fieldset>
+  </fieldset>
+</form>

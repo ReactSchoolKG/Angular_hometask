@@ -1,0 +1,20 @@
+<li>
+  First name : {{user.firstName}}
+</li>
+<li>
+  Last name : {{user.lastName}}
+</li>
+<li>
+  Age : {{user.age}}
+</li>
+<li>
+  Children :
+  <div *ngIf="user.children">
+    <br/>
+    <ul>
+      <app-child-item *ngFor="let child of user.children" [child]="child"></app-child-item>
+    </ul>
+  </div>
+</li>
+<button (click)="delete(index)">Delete this user</button>
+<div><br/></div>

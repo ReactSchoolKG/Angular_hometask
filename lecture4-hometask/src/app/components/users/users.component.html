@@ -1,0 +1,11 @@
+<div class="container">
+  <div>
+    <p>List of users : </p>
+    <ul>
+      <app-user-item *ngFor="let user of users$|async; let i = index" [user]="user" [index]="i"></app-user-item>
+    </ul>
+  </div>
+  <div class="form">
+    <app-user-form></app-user-form>
+  </div>
+</div>
