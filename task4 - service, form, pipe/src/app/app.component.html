@@ -1,0 +1,26 @@
+<!--Service Task-->
+<h3>Service Task</h3>
+<div>
+  <ul>
+    <li *ngFor = "let item of country$|async">
+      <div>Country:{{item.country}}</div>      
+      <div>Capital:{{item.capital}}</div>
+      <hr/>
+    </li>
+  </ul>
+  <div [formGroup]="countryForm">
+    <input type="text" formControlName = "country">
+    <input type="text" formControlName = "capital">
+    <button (click) = "addCountry(countryForm.controls.country.value, countryForm.controls.capital.value)" 
+    [disabled]="countryForm.get('country').hasError('required') || countryForm.get('capital').hasError('required')">Add new country</button>
+  </div>
+</div>
+
+<!--ReactiveForm Task-->
+<h3>ReactiveForm Task</h3>
+<app-person-form></app-person-form>
+
+<!--Pipe Task-->
+<h3>Pipe Task</h3>
+<p>{{3|circleSquare}}</p>
+<p>{{'#d04844'|rgb}}</p>

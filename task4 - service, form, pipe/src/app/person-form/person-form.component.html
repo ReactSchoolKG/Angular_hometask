@@ -1,0 +1,38 @@
+<form [formGroup]="personForm">
+  <fieldset>
+    <legend>Personal data</legend>
+
+    <label>First name </label>
+    <input type="text" formControlName="firstName" placeholder="First name">
+    <span *ngIf="personForm.get('firstName').hasError('firstLetterNoCapitalize') && personForm.get('firstName').touched">First letter no capitalize</span><br/>
+
+    <label>Last name </label>
+    <input type="text" formControlName="lastName" placeholder="Last name">
+    <span *ngIf="personForm.get('lastName').hasError('firstLetterNoCapitalize') && personForm.get('lastName').touched">First letter no capitalize</span><br/>
+
+    <label>Age </label>
+    <input type="text" formControlName="age" placeholder="age">
+    <span *ngIf="personForm.get('age').hasError('max')||personForm.get('age').hasError('min')">Error!</span><br/>
+    
+    <div formArrayName="children">
+        <h3>Children</h3>
+        <div *ngFor="let item of children.controls; let i=index">
+          Child {{i+1}}
+            <div formGroupName = "{{i}}">
+                <label>First name </label>
+                <input type="text" formControlName = "firstName" placeholder="First name">
+                <span *ngIf="item.get('firstName').hasError('firstLetterNoCapitalize') && item.get('firstName').touched">First letter no capitalize</span><br/>
+
+                <label>Last name </label>
+                <input type="text" formControlName = "lastName" placeholder="Last name">
+                <span *ngIf="item.get('lastName').hasError('firstLetterNoCapitalize') && item.get('lastName').touched">First letter no capitalize</span>
+            </div>
+        </div>
+        <button (click)="addChildren()">Add Children</button>
+    </div>
+  </fieldset>
+</form>
+
+<div>
+  Value:{{personForm.value|json}}
+</div>
