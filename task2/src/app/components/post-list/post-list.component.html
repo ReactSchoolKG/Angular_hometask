@@ -1,0 +1,13 @@
+
+<div class="post-list">
+  <div *ngFor="let post of postList" class="post-list-container">
+    
+      <app-post-item [post]="post"></app-post-item>
+  </div>
+  <div class="post-list-container">
+      <button class="more-btn">Older Posts →</button>
+  </div>
+  
+</div>
+<hr>  
+
