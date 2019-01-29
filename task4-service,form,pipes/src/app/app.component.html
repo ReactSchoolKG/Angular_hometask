@@ -1,0 +1,52 @@
+
+<!--Services-->
+<div id='services'>
+<h2 id='header-services'>Services</h2>
+
+<div>
+  <ul>
+    <li *ngFor = "let item of car$|async">
+      <div>Brand:{{item.brand}}</div>      
+      <div>Model:{{item.model}}</div>
+      <div>
+        <button (click)="deleteCar(item)">Delete {{item.brand}} {{item.model}}</button>
+      </div>
+      <hr/>
+    </li>
+  </ul>
+  <div id="add-car" [formGroup]="carForm">
+    <label for="brand">Brand </label><br/>
+    <input id="brand" type="text" formControlName = "brand"><br/>
+    <label for="model">Model </label><br/>
+    <input id="model" type="text" formControlName = "model"><br/>
+    <button (click) = "addCar(carForm.controls.brand.value, carForm.controls.model.value)" 
+      [disabled]="carForm.get('brand').hasError('required') || 
+      carForm.get('model').hasError('required')"> 
+      Add new Car
+    </button>
+  </div>
+</div>
+
+<hr/>
+</div>
+<!--End Services -->
+
+
+<!--Form-->
+
+<app-person-form></app-person-form>
+
+<br/>
+<!--End form-->
+
+<!--Pipes-->
+
+<div id="pipes">
+
+<h2 id='header-pipes'>Pipes</h2>
+
+<h3>Circle area: {{2|circleSquare}}</h3>
+<h3>Hex to Rgb: {{'ffffff'|hexToRgb}}</h3>
+</div>
+
+<!--End Pipes-->

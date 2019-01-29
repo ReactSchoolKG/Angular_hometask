@@ -1,0 +1,21 @@
+#services, #pipes{
+  width: 40vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#header-services, #header-pipes{
+    margin: 0 auto;
+}
+
+#add-car{
+    margin-left: 15vw;
+}
+
+li{
+    list-style-type: none;
+}
+
+
+

@@ -1,0 +1,48 @@
+
+<form [formGroup]="personForm">
+    <h2 id='header-form'>Form</h2>
+  <fieldset>
+    <legend>Personal data</legend>
+
+    <h4>Your personal data</h4>
+
+    <label for="firstName">First name </label><br/>
+    <input id="firstName" type="text" formControlName="firstName" placeholder="First name"><br/>
+    <div class="error" *ngIf="personForm.get('firstName').hasError('firstLetterNotUppercase') &&
+      personForm.get('firstName').dirty">First letter should be a capital</div>
+
+    <label for="lastName">Last name </label><br/>
+    <input id="lastName" type="text" formControlName="lastName" placeholder="Last name"><br/>
+    <div class="error" *ngIf="personForm.get('lastName').hasError('firstLetterNotUppercase') &&
+      personForm.get('lastName').dirty">First letter should be a capital</div>
+
+    <label for="age">Age </label><br/>
+    <input id="age" type="number" formControlName="age" placeholder="Age">
+    <div class="error" *ngIf="personForm.get('age').hasError('max') ||
+      personForm.get('age').hasError('min')">The number should be 0 - 120</div>
+    
+    <div formArrayName="children">
+        <h4> Your children's data</h4>
+        <div *ngFor="let item of children.controls; let i=index">
+            <div formGroupName = "{{i}}">
+                <label for="firstName">First name </label><br/>
+                <input id="firstName" type="text" formControlName = "firstName" placeholder="First name"><br/>
+                <div class="error" *ngIf="item.get('firstName').hasError('firstLetterNotUppercase') &&
+                  item.get('firstName').dirty">First letter should be a capital</div>
+
+                <label for="lastName">Last name </label><br/>
+                <input id="lastName" type="text" formControlName = "lastName" placeholder="Last name"><br/>
+                <div class="error" *ngIf="item.get('lastName').hasError('firstLetterNotUppercase') && 
+                  item.get('lastName').dirty">First letter should be a capital</div>
+            
+                <label for="age">Age </label><br/>
+                <input id="age" type="number" formControlName="age" placeholder="Age">
+                <div class="error" *ngIf="item.get('age').hasError('max') ||
+                  item.get('age').hasError('min')">The number should be 0 - 120</div>
+              </div>
+              <br/>
+        </div>
+        <button (click)="addChild()">Add Child</button>
+    </div>
+  </fieldset>
+</form>

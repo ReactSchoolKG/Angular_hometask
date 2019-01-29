@@ -1,0 +1,16 @@
+.error{
+    color: red;
+    margin-top: .5vh;
+    margin-bottom: .5vh;
+}
+
+form{
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 38vw;
+}
+
+#header-form, legend{
+    margin: 0 auto;
+}
