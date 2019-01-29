@@ -1,0 +1,34 @@
+<div>
+  <h2>Personal Form </h2>
+</div>
+<form [formGroup]="profileForm" (submit)="onSubmit()">
+  <fieldset>
+    <legend>Profile form</legend>
+    <fieldset>
+      <legend>Personal data</legend>
+      <label for="firstName"> First name </label>
+      <input type="text" id="name" formControlName="firstName" placeholder="First name"><br/><br/>
+      <div *ngIf="firstName.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="firstName.errors.minlength">
+          Name must be at least 4 characters long.
+        </div>
+
+      <label for="lastName"> Last name </label>
+      <input type="text" id="lastname" formControlName="lastName" placeholder="Last name"><br/><br/>
+      <label> Age </label>
+      <input type="number" id="age" formControlName="age" placeholder="Your age"><br/><br/>
+      <div formArraypName="children"><br/><br/>
+      <fieldset>
+      <legend>Childrem form</legend>
+      <label for="firstName"> First name </label>
+      <input type="text" id="name" formControlName="firstName" placeholder="First name"><br/><br/>
+      <label for="lastName"> Last name </label>
+      <input type="text" id="lastname" formControlName="lastName" placeholder="Last name"><br/><br/>
+      </fieldset>
+      </div><br/>
+      <button type="submit">Submit</button>
+    </fieldset>
+  </fieldset>
+</form>
