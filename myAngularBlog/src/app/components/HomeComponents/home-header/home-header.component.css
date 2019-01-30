@@ -1,0 +1,52 @@
+header.masthead .overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  background-color:#212529;
+  opacity:.5
+}
+
+header.masthead{
+  height: 80vh;
+  margin-bottom:50px;
+  background:no-repeat center center;
+  background-color:#868e96;
+  background-attachment:scroll;
+  position:relative;
+  background-size:cover
+}
+
+header.masthead .post-heading,header.masthead .site-heading{
+  padding:200px 0 150px;
+  color:#fff
+}
+
+img::-moz-selection{
+  color:#fff;
+  background:0 0
+}
+
+img::selection{
+  color:#fff;
+  background:0 0
+}
+
+img::-moz-selection{
+  color:#fff;
+  background:0 0
+}
+
+h1{
+  font-weight:800;
+  font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif
+}
+
+header.masthead .site-heading{
+  text-align:center
+}
+
+header.masthead .site-heading h1{
+  font-size:50px;margin-top:0
+}

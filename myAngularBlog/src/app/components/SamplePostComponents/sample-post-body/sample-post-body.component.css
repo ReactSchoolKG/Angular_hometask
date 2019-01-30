@@ -1,0 +1,27 @@
+p{
+  line-height:1.5;
+  margin:30px 0;
+  font-size: 21px;
+  color:#212529;
+  font-family:Lora,'Times New Roman',serif;
+}
+
+a{
+  text-decoration:underline;
+  color:#212529;
+}
+
+h2{
+  font-weight:800;
+  font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif
+}
+
+img {
+  height: 70vh;
+  width: 100%;
+}
+
+blockquote {
+  font-style:italic;
+  color:#868e96
+}
