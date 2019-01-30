@@ -7,9 +7,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  public navOnTop: boolean = true;
+  public navToBottom: boolean = false;
+  public navToTop: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+    this.hideShowNav();
+  }
+
+  hideShowNav = () => {
+    let lastScrollValue = 0;
+    window.onscroll = () => {
+      if(window.pageYOffset === 0) {
+        this.navOnTop =true;
+        this.navToBottom = false;
+        this.navToTop = false;
+      } else if (window.pageYOffset !== 0) {
+        this.navOnTop =false;
+        this.navToBottom = true;
+        if (lastScrollValue > window.pageYOffset) {
+          this.navToTop = true;
+        } else {
+          this.navToTop = false;
+        }        
+      }
+      lastScrollValue = window.pageYOffset;
+    };
+    console.log('Scroll value: ', window.pageYOffset);
   }
 
 }

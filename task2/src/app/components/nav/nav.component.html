@@ -1,4 +1,6 @@
-<nav class="navbar" id="mainNav">
+<nav class="navbar" id="mainNav" 
+[ngClass]="{ 'nav-on-top': navOnTop, 'nav-to-bottom': navToBottom, 'nav-to-top': navToTop }"
+>
   <div class="container">
     <a class="navbar-brand" href="index.html">Start Bootstrap</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

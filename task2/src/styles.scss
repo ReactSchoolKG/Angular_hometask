@@ -214,3 +214,24 @@ footer {
     font-size: 1.4em;
     color: black;
 }
+
+nav {
+    transition: all .5s ease-in;
+}
+
+.nav-on-top {
+    transform: translate3d(0,0px,0);
+    background-color: rgba(0,0,0,0);
+    transition: all .5s ease-in;
+}
+
+.nav-to-bottom {
+    transform: translate3d(0,-100px,0);
+    background-color: rgba(0,0,0,0);
+    transition: all .5s ease-in;
+}
+
+.nav-to-top {
+    transform: translate3d(0,0px,0);
+    background-color: rgba(0,0,0,.4);
+}
