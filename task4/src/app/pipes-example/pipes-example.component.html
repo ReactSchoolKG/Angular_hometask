@@ -1,0 +1,11 @@
+<div class="pipeBox">
+    <!-- get inputRadius and show circle square -->
+    <label>Enter Circle Radius</label>
+    <input (keyup)="onKeyR($event)">
+    <p>Square of circle is: {{ inputRadius | circleSquare }}</p><br>
+
+    <!-- get inputHex and show equivalent rgb color -->
+    <label>Enter HEX color</label>
+    <input (keyup)="onKeyH($event)">
+    <p *ngIf="inputHex | hexToRgb"> rgb is: rgb( {{ inputHex | hexToRgb }} )</p>
+</div>

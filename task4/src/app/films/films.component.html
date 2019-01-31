@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <!-- Show available list of films -->
+  <div class="filmList available">
+    <div *ngFor="let item of allFilms">
+      <div>
+        <h5>{{item.title}}</h5>
+        <p>Release year: <span>{{item.year}}</span></p>
+        <p>Distributor: <span>{{item.distributor}}</span></p>
+      </div>
+      <div>
+        <button (click)="select(item)">Select</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Show selecteed list of films -->
+  <div class="filmList selected">
+    <div *ngFor="let film of selectedFilms._value">
+        <div>
+          <p>{{film.title}}</p>
+        </div>
+        <div>
+        </div>
+      </div>
+  </div>
+</div>

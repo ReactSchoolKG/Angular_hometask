@@ -1,0 +1,40 @@
+.wrapper{display: flex}
+
+.filmList {width : 50%}
+
+.available{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.available>div{
+    width: 30%;
+    margin: 10px;
+    background-color: rgb(213, 213, 213);
+    text-align: center;
+    border-radius: 10px;
+}
+
+h5{
+    font-size: 20px;
+    color:#542151;
+}
+
+span{color:#544684}
+
+button{
+    font-size: 16px;
+    color: #854125;
+    border: 1px solid #f55455;
+    border-radius: 5px;
+    padding: 5px 30px;
+    margin: 5px;
+}
+
+.selected>div{
+    text-align: center;
+    background-color: rgb(164, 164, 164);
+    padding: 7px;
+    border-radius: 10px;
+    margin: 10px;
+}

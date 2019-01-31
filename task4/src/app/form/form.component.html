@@ -1,0 +1,36 @@
+<!-- create Angular Reactive form -->
+<form [formGroup]="myForm">
+    <input type="text" formControlName="firstName" placeholder="First name" [ngStyle]='f_l_name'>
+    <input type="text" formControlName="lastName" placeholder="Last name" [ngStyle]='f_l_name'>
+    <input type="text" formControlName="age" placeholder="Age" [ngStyle]='f_l_name'>
+
+    <!-- Add formAarray with  firstNameCh and lastNameCh controls-->
+    <div formArrayName="children">
+        <div *ngFor="let child of childForms.controls; let i=index" 
+          [formGroupName]="i">
+            <input formControlName="firstNameCh" [ngStyle]='childInput'/>
+            <input formControlName="lastNameCh" [ngStyle]='childInput'/>
+            <button (click)="deleteChild(i)" [ngStyle]='childInput'>Delete</button>
+        </div>
+    </div>
+
+    <!-- Add control buttons 'Add new child' and 'Submit' -->
+    <div [ngStyle]="buttomControls">
+      <button (click)="addChild()" [ngStyle]='buttomBtn'>Add new child </button>
+      <button type="submit" [disabled]="!myForm.valid" [ngStyle]='buttomBtn'>Submit !</button>
+    </div>
+
+</form>
+
+<!-- Catch user input errors -->
+<div [ngStyle]="errorBox">
+  <div *ngIf="myForm.get('firstName').hasError('pattern')">*not correct First Name</div>
+  <div *ngIf="myForm.get('lastName').hasError('pattern')">*not correct Last Name</div>
+  <div *ngIf="myForm.get('age').hasError('min')">*not correct age</div>
+  <div *ngIf="myForm.get('age').hasError('max')">*not correct age</div>
+</div>
+
+<!-- show generated input object -->
+<div [ngStyle]='formValue'>
+  valueChanges:{{myForm.valueChanges|async|json}}
+</div>
