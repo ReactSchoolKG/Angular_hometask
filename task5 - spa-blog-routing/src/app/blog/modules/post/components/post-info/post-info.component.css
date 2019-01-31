@@ -1,0 +1,15 @@
+p{
+    font-size: 20px;
+    padding: 5px 0;
+}
+i{
+    color: grey;
+}
+img{
+    max-width: 100%;
+}
+.caption p{
+    color:grey;
+    font-size: 15px;
+    text-align: center;
+}

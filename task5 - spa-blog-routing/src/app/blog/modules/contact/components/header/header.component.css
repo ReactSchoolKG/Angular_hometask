@@ -1,0 +1,11 @@
+.heading{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    height: 500px;
+}
+.title-style{
+    font-weight: bold;
+    font-size: 70px;
+}

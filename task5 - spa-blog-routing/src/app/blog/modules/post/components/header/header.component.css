@@ -1,0 +1,13 @@
+.heading{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    height: 600px;
+    color: white;
+}
+.title-style{
+    font-weight: bold;
+    font-size: 60px;
+    max-width: 665px;
+}

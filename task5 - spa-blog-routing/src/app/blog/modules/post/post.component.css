@@ -1,0 +1,9 @@
+.post-info-center{
+    max-width:800px;
+    margin:60px auto;
+}
+.bg-img{
+    background: url(https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-clean-blog/master/img/post-bg.jpg) center;
+    background-size: cover;
+    height: 650px;
+}

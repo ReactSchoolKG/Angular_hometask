@@ -1,0 +1,9 @@
+.post-list-center{
+    max-width:700px;
+    margin:60px auto;
+}
+.bg-img{
+    background: url(https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-clean-blog/master/img/home-bg.jpg) center;
+    background-size: cover;
+    height: 500px;
+}

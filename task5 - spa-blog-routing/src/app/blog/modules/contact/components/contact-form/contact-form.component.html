@@ -1,0 +1,14 @@
+<p>
+  Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!
+</p>
+<form [formGroup] = "submitForm">
+  <input type="text" formControlName="name" placeholder="Name"/>
+  <hr/>
+  <input type="text" formControlName="email" placeholder="Email Address"/>
+  <hr/>
+  <input type="text" formControlName="phoneNumber" placeholder="Phone Number"/>
+  <hr/>
+  <textarea rows="5" formControlName="message" placeholder="Message"></textarea>
+  <hr/>
+  <a class="btn btn-primary" style="color:white">Send</a>
+</form>
