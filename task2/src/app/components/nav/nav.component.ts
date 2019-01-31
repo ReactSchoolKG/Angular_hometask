@@ -35,7 +35,7 @@ export class NavComponent implements OnInit {
       }
       lastScrollValue = window.pageYOffset;
     };
-    console.log('Scroll value: ', window.pageYOffset);
   }
 
+ 
 }
