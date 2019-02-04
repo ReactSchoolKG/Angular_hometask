@@ -1,0 +1,13 @@
+<div class="api-method">
+    <h4 class="method-title">Lookup a postcode</h4>
+    <h4><span class="http-method">GET</span>
+        api.postcodes.io/postcodes/
+        <input 
+        [formControl]="searchControl"
+        class="rest-resource" 
+        placeholder=":postcode" 
+        id="single-postcode-input">
+        <a (click) = "handleRequest()" id="single-postcode">Request</a>
+    </h4>
+    <pre class="code-box" id="single-postcode-result">{{responce | json}}</pre>
+</div>

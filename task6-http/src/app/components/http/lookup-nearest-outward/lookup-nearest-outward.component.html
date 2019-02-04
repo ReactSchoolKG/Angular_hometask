@@ -1,0 +1,12 @@
+<div class="api-method">
+    <h4 class="method-title">Nearest outward code for outward code</h4>
+    <h4><span class="http-method">GET</span>
+        api.postcodes.io/outcodes/
+        <input 
+            [formControl]="searchControl"
+            class="rest-resource" 
+            placeholder=":outcode" 
+            id="nearest-outcode-input">
+        <a (click)="handleRequest()" id="nearest-outcode">Request</a>/nearest
+    </h4><pre class="code-box" id="nearest-outcode-result">{{responce | json}}</pre>
+</div>

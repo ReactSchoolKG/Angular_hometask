@@ -1,0 +1,13 @@
+<div class="api-method">
+    <h4 class="method-title">Bulk lookup postcodes</h4>
+    <h4><span class="http-method">POST</span>
+        api.postcodes.io/postcodes
+        <a (click)="handleRequest()" id="bulk-postcodes">Request</a>
+    </h4>
+    <div class="json-post">
+        <textarea 
+        [formControl]="searchControl"
+        id="bulk-postcodes-input">
+        </textarea>
+    </div><pre class="code-box" id="bulk-postcodes-result">{{ responce | json }}</pre>
+</div>

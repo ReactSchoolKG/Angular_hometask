@@ -1,0 +1,12 @@
+<div class="api-method">
+    <h4 class="method-title">Query for postcode</h4>
+    <h4><span class="http-method">GET</span>
+        api.postcodes.io/postcodes?q=
+        <input 
+            [formControl]="searchControl"
+            class="rest-resource" 
+            value=":postcode" 
+            id="query-postcode-input">
+            <a (click)="handleRequest()" id="nearest-postcode">Request</a>
+    </h4><pre class="code-box" id="query-postcode-result">{{responce | json}}</pre>
+</div>

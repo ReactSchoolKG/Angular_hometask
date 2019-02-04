@@ -1,0 +1,18 @@
+<div class="api-method">
+    <h4 class="method-title">Get nearest postcodes for a given longitude &amp; latitude</h4>
+    <h4><span class="http-method">GET</span>
+        api.postcodes.io/postcodes?lon=
+        <input 
+            [formControl]="searchControlLong"
+            class="rest-resource" 
+            placeholder=":longitude" 
+            id="lon-input">
+        &amp;lat=
+        <input 
+            [formControl]="searchControlLatt"
+            class="rest-resource" 
+            placeholder=":latitude" 
+            id="lat-input">
+        <a (click)="handleRequest()" id="geocode-postcode">Request</a>
+    </h4>
+    <pre class="code-box" id="geocode-postcode-result">{{responce | json}}</pre></div>

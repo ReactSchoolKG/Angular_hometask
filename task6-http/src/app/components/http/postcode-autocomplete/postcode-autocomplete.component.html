@@ -1,0 +1,14 @@
+<div class="api-method">
+    <h4 class="method-title">Autocomplete a postcode partial</h4>
+    <h4><span class="http-method">GET</span>
+        api.postcodes.io/postcodes/
+        <input 
+        type="text"
+        [formControl]="searchControl"
+        class="rest-resource" 
+        placeholder=":postcode" 
+        id="autocomplete-postcode-input">
+        /autocomplete
+        <a id="single-postcode">Request</a>
+    </h4><pre *ngIf="responce" class="code-box" id="autocomplete-postcode-result">{{responce | json}}</pre>
+</div>

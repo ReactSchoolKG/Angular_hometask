@@ -1,0 +1,11 @@
+<div class="api-method">
+    <h4 class="method-title">Lookup Outward Code</h4>
+    <h4><span class="http-method">GET</span>
+        api.postcodes.io/outcodes/
+        <input 
+        [formControl]="searchControl"
+        class="rest-resource" 
+        placeholder=":outcode" 
+        id="show-outcode-input"><a (click)="handleRequest()" id="show-outcode">Request</a>
+    </h4><pre class="code-box" id="show-outcode-result">{{responce | json}}</pre>
+</div>
