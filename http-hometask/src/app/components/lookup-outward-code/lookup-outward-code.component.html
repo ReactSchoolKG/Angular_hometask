@@ -1,0 +1,29 @@
+<div style="text-align: center">
+  <h2>Lookup outward code</h2>
+  <h4>Get method</h4>
+  <p><b>API</b> : api.postcodes.io/outcodes/:outcode</p>
+</div>
+<br>
+<div style="display: flex; align-items: center; flex-direction: column">
+  <div style="display: flex; align-items: center; justify-content: space-around; flex-direction: row; width: 20%">
+    <input type="text" [formControl] = "search" placeholder="outcode"/>
+    <a class="btn btn-primary" role="button" (click)="makeRequest()">Send</a>
+  </div>
+  <div style="width: 40%">
+    <h6>Response :</h6>
+    <div *ngIf="response.status">
+      <textarea class="form-control" rows="8" style="border: 2px solid green; padding: 3px">
+        {{response.result|json}}
+      </textarea>
+      <button (click)="response.status = false" class="btn btn-primary">Close</button>
+    </div>
+    <div *ngIf="response.error">
+      <textarea style="border: 2px solid red; padding: 3px" class="form-control" rows="8">
+      Error!
+      {{response.message}}
+    </textarea>
+      <button (click)="response.error = false" class="btn btn-primary">Close</button>
+    </div>
+  </div>
+</div>
+<hr>
