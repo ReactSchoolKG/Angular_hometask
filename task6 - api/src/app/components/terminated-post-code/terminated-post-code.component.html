@@ -1,0 +1,11 @@
+<h4>Lookup terminated postcode</h4>
+  <p>
+    <span>GET</span>
+    api.postcodes.io/terminated_postcodes/
+    <input type="text" [formControl] = "searchControl" placeholder=":postcode"/>
+    <a (click)="getRequest()">Request</a>
+  </p>
+  <textarea class="request">
+    {{responseValue}}
+  </textarea>
+<hr>

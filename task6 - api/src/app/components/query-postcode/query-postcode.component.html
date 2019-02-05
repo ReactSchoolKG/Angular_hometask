@@ -1,0 +1,11 @@
+<h4>Query for postcode</h4>
+  <p>
+    <span>GET</span>
+    api.postcodes.io/postcodes?q=
+    <input type="text" [formControl] = "searchControl" placeholder=":postcode"/>
+    <a (click)="getRequest()">Request</a>
+  </p>
+  <textarea class="request">
+    {{responseValue}}
+  </textarea>
+<hr>

@@ -1,0 +1,11 @@
+<h4>Lookup Outward Code</h4>
+  <p>
+    <span>GET</span>
+    api.postcodes.io/outcodes/
+    <input type="text" [formControl] = "searchControl" placeholder=":outcode"/>
+    <a (click)="getRequest()">Request</a>
+  </p>
+  <textarea class="request">
+    {{responseValue}}
+  </textarea>
+<hr>

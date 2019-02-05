@@ -1,0 +1,13 @@
+<h4>Get nearest postcodes for a given longitude & latitude</h4>
+  <p>
+    <span>GET</span>
+    api.postcodes.io/postcodes?lon=
+    <input type="text" [formControl] = "longitude" placeholder=":longitude"/>
+    &lat=
+    <input type="text" [formControl] = "latitude" placeholder=":latitude"/>
+    <a (click)="getRequest()">Request</a>
+  </p>
+  <textarea class="request">
+    {{responseValue}}
+  </textarea>
+<hr>

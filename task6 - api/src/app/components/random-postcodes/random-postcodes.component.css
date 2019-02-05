@@ -1,0 +1,18 @@
+span{
+    background-color:gray;
+    color: white;
+    padding: 6px;
+    border-radius: 3px;
+}
+.request{
+    background-color: rgb(240, 238, 238);
+    height: 100px;
+    width: 100%;
+}
+a{
+    border:1px solid gray;
+    padding: 6px;
+    border-radius: 3px;
+    float: right;
+    cursor: pointer;
+}

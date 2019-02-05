@@ -1,0 +1,20 @@
+span{
+    background-color:gray;
+    color: white;
+    padding: 6px;
+    border-radius: 3px;
+}
+textarea{
+    height: 100px;
+    width: 100%;
+}
+.request{
+    background-color: rgb(240, 238, 238);
+}
+a{
+    border:1px solid gray;
+    padding: 6px;
+    border-radius: 3px;
+    float: right;
+    cursor: pointer;
+}

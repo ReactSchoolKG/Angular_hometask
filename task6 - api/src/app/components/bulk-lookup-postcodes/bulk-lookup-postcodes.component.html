@@ -1,0 +1,13 @@
+<h4>Bulk lookup postcodes</h4>
+  <p>
+    <span>POST</span> 
+    api.postcodes.io/postcodes 
+    <a (click)="getRequest()">Request</a>
+  </p>
+  <textarea>
+    {{searchControl.value}}
+  </textarea>
+  <textarea class="request">
+    {{responseValue}}
+  </textarea>
+<hr>
