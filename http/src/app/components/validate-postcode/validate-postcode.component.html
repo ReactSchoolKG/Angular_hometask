@@ -1,0 +1,12 @@
+<div class="api-method">
+  <h4 class="method-title">Validate a postcode</h4>
+  <h4>
+    <span class="http-method">GET</span>
+    api.postcodes.io/postcodes/
+    <input [formControl] = "search"  class="rest-resource" placeholder=":postcode" id="validate-postcode-input">
+    /validate
+    <a (click) = 'getRequest()' id="validate-postcode">Request</a>
+  </h4>
+  <pre class="code-box" id="validate-postcode-result">{{ response | json }}</pre>
+  <hr>
+</div>

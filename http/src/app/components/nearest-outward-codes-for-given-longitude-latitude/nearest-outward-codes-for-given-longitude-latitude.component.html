@@ -1,0 +1,10 @@
+<div class="api-method">
+  <h4 class="method-title">Get nearest outward codes for a given longitude &amp; latitude</h4>
+  <h4>
+    <span class="http-method">GET</span>api.postcodes.io/outcodes?lon=
+    <input [formControl] = "longitude" class="rest-resource" placeholder=":longitude" id="lon-outcode-input">&amp;lat=
+    <input [formControl] = "latitude" class="rest-resource" placeholder=":latitude" id="lat-outcode-input">
+    <a (click)="getRequest()" id="geocode-outcode">Request</a></h4>
+  <pre class="code-box" id="geocode-outcode-result">{{ response | json }}</pre>
+  <hr>
+</div>

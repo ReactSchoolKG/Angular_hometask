@@ -1,0 +1,14 @@
+
+<div class="api-method">
+  <h4 class="method-title">Bulk Reverse Geocoding</h4>
+  <h4>
+    <span class="http-method">POST</span>
+    api.postcodes.io/postcodes
+    <a (click)='getRequest()' id="bulk-reverse">Request</a>
+  </h4>
+  <div class="json-post">
+    <textarea id="bulk-reverse-input">{{ search.value }}</textarea>
+  </div>
+  <pre class="code-box" id="bulk-reverse-result">{{ response | json }}</pre>
+  <hr>
+</div>

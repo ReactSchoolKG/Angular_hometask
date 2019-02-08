@@ -1,0 +1,11 @@
+<div class="api-method">
+  <h4 class="method-title">Autocomplete a postcode partial</h4>
+  <h4>
+    <span class="http-method">GET</span>
+    api.postcodes.io/postcodes/
+    <input [formControl] = "search" class="rest-resource" placeholder=":postcode" id="autocomplete-postcode-input">/autocomplete
+    <a (click)="getRequest()" id="autocomplete-postcode">Request</a>
+  </h4>
+  <pre class="code-box" id="autocomplete-postcode-result">{{ response | json }}</pre>
+  <hr>
+</div>
