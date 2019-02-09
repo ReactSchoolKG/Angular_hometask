@@ -1,34 +1,64 @@
 <div>
-  <h2>Personal Form </h2>
+   <h2 style="padding-left: 30px">Personal Form </h2>
 </div>
-<form [formGroup]="profileForm" (submit)="onSubmit()">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <fieldset>
-    <legend>Profile form</legend>
-    <fieldset>
-      <legend>Personal data</legend>
-      <label for="firstName"> First name </label>
-      <input type="text" id="name" formControlName="firstName" placeholder="First name"><br/><br/>
-      <div *ngIf="firstName.errors.required">
-          Name is required.
-        </div>
-        <div *ngIf="firstName.errors.minlength">
-          Name must be at least 4 characters long.
-        </div>
-
-      <label for="lastName"> Last name </label>
-      <input type="text" id="lastname" formControlName="lastName" placeholder="Last name"><br/><br/>
-      <label> Age </label>
-      <input type="number" id="age" formControlName="age" placeholder="Your age"><br/><br/>
-      <div formArraypName="children"><br/><br/>
+      <legend>Profile form</legend>
       <fieldset>
-      <legend>Childrem form</legend>
-      <label for="firstName"> First name </label>
-      <input type="text" id="name" formControlName="firstName" placeholder="First name"><br/><br/>
-      <label for="lastName"> Last name </label>
-      <input type="text" id="lastname" formControlName="lastName" placeholder="Last name"><br/><br/>
+          <legend>Personal data</legend>
+          <label for="firstName"> First name </label>
+          <input type="text" formControlName="firstName" placeholder="First name"><br/><br/>
+          <div
+              *ngIf="profileForm.get('firstName').invalid && profileForm.get('firstName').touched">
+              This field must start with uppercase!
+          </div>
+          <label for="lastName"> Last name </label>
+          <input type="text" formControlName="lastName" placeholder="Last name"><br/><br/>
+          <div
+             *ngIf="profileForm.get('lastName').invalid && profileForm.get('lastName').touched">
+              This field must start with uppercase!
+          </div>
+          <label> Age </label>
+          <input type="number" formControlName="age" placeholder="Your age" required><br/><br/>
+          <div
+              *ngIf="profileForm.get('age').invalid && profileForm.get('age').touched">
+              Age range must be between 0 and 120!
+          </div>
+          <div formArrayName="children">
+              <br/><br/>
+              <h3>Children</h3>
+              <fieldset>
+                  <legend> Children form </legend>
+                  <div *ngFor="let item of profileForm.get('children').controls; let i=index"
+                  [formGroup]="item">
+                  <div>
+                      <label [attr.for]="'firstName'+i"> First name </label>
+                      <input type="text"
+                          [attr.id]="'firstName'+i" formControlName="firstName" placeholder="First name"><br/><br/>
+                  </div>
+                  <div *ngIf="item.get('firstName').invalid && item.get('firstName').touched">
+                      This field must start with uppercase!
+                  </div>
+                  <div>
+                      <label [attr.for]="'lastName'+i"> Last name </label>
+                      <input type="text"
+                          [attr.id]="'lastName'+i" formControlName="lastName" placeholder="Last name"><br/><br/>            
+                  </div>
+                  <div *ngIf="item.get('lastName').invalid && item.get('lastName').touched">
+                      This field must start with uppercase!
+                  </div>
+                  <div>
+                      <button type="button"
+                          (click)="delete(i)"> Remove Children </button>
+                      <button type="button"
+                          (click)="addChildren()"> Add Children </button><br/><br/>
+                  </div>
+          </div>
+          </fieldset><br/>
+          <button type="button"
+              (click)="addChildren()"> Add Children </button><br/><br/>
+          <button type="submit">Submit</button>   
+          </div>
       </fieldset>
-      </div><br/>
-      <button type="submit">Submit</button>
-    </fieldset>
   </fieldset>
-</form>
+  </form>

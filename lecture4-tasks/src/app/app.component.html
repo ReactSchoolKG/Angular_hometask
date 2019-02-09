@@ -1,13 +1,32 @@
-<!-- pipe 1 -->
-<h2>Finding square</h2>
+<!-- Pipe 1 -->
+<h2 style="padding-left: 30px">Finding square</h2>
 <div>
 Enter Radius: <input [(ngModel)]="radius" type="number"></div><br />
 <div>
 Square is: <label for="radius">{{radius | square}}</label>
 </div>
-<!-- end pipe 1 -->
+
+<!-- Pipe 2 -->
+<h2 style="padding-left: 30px">Color converter</h2>
+<p>HEX Value: #ff6776 to RGB Value: ({{'#ff6776'|converter}})</p>
 
 <!-- Person Form -->
 <app-person-form></app-person-form>
-<!-- End Person Form -->
 
+<!-- Services -->
+<br/><br/><div>
+    <div>
+      {{phones$|async|json}}
+    </div>
+    <ul>
+      <li *ngFor="let item of phones$|async">
+        <div>Name:{{item.name}}</div>
+        <div>Price:{{item.price}}</div>
+        </li>
+      </ul>
+    </div>
+    <div [formGroup]="phoneForm">
+        <input type="text" formControlName="name" placeholder="Model" required><br/><br/>
+        <input type="number" formControlName="price" placeholder="Price" required><br/><br/>
+        <button type="button"  (click)="addPhone(model, price)">Add new model</button><br/><br/>
+    </div>
